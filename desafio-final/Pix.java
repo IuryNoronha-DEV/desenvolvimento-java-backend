@@ -3,11 +3,12 @@ public class Pix extends FormaPagamento {
     @Override
     public void pagar(double valor) {
 
-        if (!validarValor(valor)) {
-            status = "Recusado";
-            return;
+       if (!validarValor(valor)) {
+        this.valor = valor;
+        status = "Recusado";
+        return;
         }
-
+    
         this.valor = valor;
         status = "Aprovado";
 
